@@ -2,9 +2,9 @@
 
 ## Используемый инструментарий
 
-<h4>`Django 3.7+`</h4>
-<h4>`Rest API 3.13.+ `</h4>
-<h4>`React JS`</h4>
+`Django 3.7+`
+`Rest API 3.13.+ `
+`React JS`
 
 ## 
 
