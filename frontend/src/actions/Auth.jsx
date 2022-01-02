@@ -1,11 +1,58 @@
 import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    USER_LOAD_SUCCESS,
-    USER_LOAD_FAIL
+    USER_LOADED_SUCCESS,
+    USER_LOADED_FAIL,
+    AUTHENTICATED_SUCCESS,
+    AUTHENTICATED_FAIL,
+    LOGOUT
 } from '../actions/Types';
 
 import axios from 'axios';
+
+export const checkAuthenticated = () => async dispatch => {
+
+    if (localStorage.getItem('access')) {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        };
+
+        const body = JSON.stringify({ token: localStorage.getItem('access')});
+
+        try {
+
+            const res = await axios.post(`http://localhost:8000/auth/jwt/verify/`, body, config)
+
+            if (res.data.code !== 'token_not_valid') {
+                
+                dispatch({
+                    type: AUTHENTICATED_SUCCESS
+                });
+
+            } else {
+
+                dispatch({
+                    type: AUTHENTICATED_FAIL
+                });
+            }
+
+        } catch (err) {
+            dispatch({
+                type: AUTHENTICATED_FAIL
+            });
+        }
+
+    } else {
+
+        dispatch({
+            type: AUTHENTICATED_FAIL
+        });
+    }
+
+};
 
 
 export const load_user = () => async dispatch => {
@@ -24,19 +71,19 @@ export const load_user = () => async dispatch => {
             const res = await axios.get(`http://localhost:8000/auth/users/me/`, config);
     
             dispatch({
-                type: USER_LOAD_SUCCESS,
+                type: USER_LOADED_SUCCESS,
                 payload: res.data
             })
     
         } catch (err) {
     
             dispatch({
-                type: USER_LOAD_FAIL
+                type: USER_LOADED_FAIL
             })
         }
     } else {
 
-        dispatch({ type: USER_LOAD_FAIL });
+        dispatch({ type: USER_LOADED_FAIL });
     }
 
 };
@@ -72,4 +119,11 @@ export const login = (email, password) => async dispatch => {
     }
 
 
+};
+
+
+export const logout = () => dispatch => {
+    dispatch({
+        type: LOGOUT
+    });
 };
