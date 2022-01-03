@@ -14,3 +14,5 @@ class ArticleSerializer(serializers.ModelSerializer):
             'body',
             'private'
         )
+
+

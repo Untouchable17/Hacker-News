@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Article(models.Model):
+    """ Модель записи/блога """
 
     title = models.CharField(max_length=255, verbose_name="Заголовок блога")
     body = models.TextField(verbose_name="Тело блога")
