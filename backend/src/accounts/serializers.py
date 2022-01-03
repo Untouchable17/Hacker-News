@@ -35,3 +35,16 @@ class ProfileSerializer(serializers.ModelSerializer):
             "city",
             "quote",
         )
+
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserProfile
+        fields = (
+            "avatar",
+            "first_name",
+            "last_name",
+            "city",
+            "quote",
+        )
