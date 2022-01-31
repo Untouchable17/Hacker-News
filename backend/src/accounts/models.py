@@ -2,7 +2,6 @@ from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.urls import reverse
-
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -26,8 +25,8 @@ class UserAccountManager(BaseUserManager):
 
     def create_superuser(self, email, name, password):
         """
-        Creates and saves a superuser with the given email, date of
-        birth and password.
+        Creates and saves a superuser with the given email, name
+        and password.
         """
         user = self.create_user(email,
                                 name=name,

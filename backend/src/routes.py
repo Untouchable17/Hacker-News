@@ -9,7 +9,7 @@ schema_view = get_schema_view(
         title="Hacker News",
         default_version='v1',
         description="Новостной сайт схожий с сайтом Hacker News",
-        contact=openapi.Contact(url="https://www.youtube.com/channel/UCVRFfnrUrcb4GsvKw7SOL-g"),
+        contact=openapi.Contact(url="https://www.youtube.com/channel/UCBQsCLHlhKYYIhOJ0eaJ_xA"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),

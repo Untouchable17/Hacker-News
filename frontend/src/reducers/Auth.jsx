@@ -35,15 +35,12 @@ export default function(state = initialState, action) {
                 ...state,
                 isAuthenticated: true
             }
-
         
         case AUTHENTICATED_FAIL:
             return {
                 ...state,
                 isAuthenticated: false
             }
-
-            
 
         case LOGIN_SUCCESS:
             localStorage.setItem('access', payload.access);
