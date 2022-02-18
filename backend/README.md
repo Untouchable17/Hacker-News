@@ -1,0 +1,2 @@
+
+## Серверная часть (Django + DjangoRestFramework)
