@@ -2,10 +2,21 @@
 
 ## Используемый инструментарий
 
-<span>`Django 3.7+`</span>
-<span>`Rest API 3.13.+`</span>
-<span>`React JS`</span>
+<span>`Django`</span>
+<span>`DjangoRestFramework`</span>
+<span>`React`</span>
+<span>`Redux`</span>
 
-## 
+### Процесс установки
 
-**Note: Находится на стадии разработки**
+1. Создайте виртуальное окружение и активируйте его `python -m venv venv` и `source venv/bin/activate`
+2. Скачайте репозиторий `https://github.com/Untouchable17/Hacker-News.git`
+3. Установите все зависимости `pip install -r requirements.txt`
+4. Создайте миграции в базе данных `python manage.py makemigrations`
+5. Примените созданные миграции `python manage.py migrate`
+
+
+### Запуск проекта
+
+1. Запустите серверную часть `python manage.py runserver`
+2. Запустите клиентскую часть `npx start`
