@@ -7,7 +7,7 @@
 <span>`React`</span>
 <span>`Redux`</span>
 
-### Процесс установки
+### Процесс установки 
 
 1. Создайте виртуальное окружение и активируйте его `python -m venv venv` и `source venv/bin/activate`
 2. Скачайте репозиторий `https://github.com/Untouchable17/Hacker-News.git`
@@ -15,6 +15,10 @@
 4. Создайте миграции в базе данных `python manage.py makemigrations`
 5. Примените созданные миграции `python manage.py migrate`
 6. Создайте суперпользователя `python manage.py createsuperuser`
+
+### Установка клиентской части
+
+> Перейдите в папку `frontend` и установите все зависимости с файла `package.json`
 
 
 ### Запуск проекта
