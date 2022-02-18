@@ -14,6 +14,7 @@
 3. Установите все зависимости `pip install -r requirements.txt`
 4. Создайте миграции в базе данных `python manage.py makemigrations`
 5. Примените созданные миграции `python manage.py migrate`
+6. Создайте суперпользователя `python manage.py createsuperuser`
 
 
 ### Запуск проекта
